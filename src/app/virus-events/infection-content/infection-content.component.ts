@@ -1,5 +1,6 @@
 import { InfectionData } from './infection-data.model';
 import { Component, Input } from '@angular/core';
+import { InfectionManagementService } from '../infection-management.service';
 
 /**
  * Infection data component.
@@ -11,9 +12,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./infection-content.component.scss']
 })
 export class InfectionContentComponent {
-  /**
-   * Infection data.
-   */
-  @Input()
-  infectionData: InfectionData;
+  selectedInfection$ = this.infectionManagementService.selectedInfection$;
+  
+  constructor(private readonly infectionManagementService: InfectionManagementService) {}
 }

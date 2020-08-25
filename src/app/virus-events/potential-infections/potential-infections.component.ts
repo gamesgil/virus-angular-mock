@@ -1,3 +1,4 @@
+import { InfectionManagementService } from './../infection-management.service';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -9,4 +10,10 @@ import { Component, Input } from '@angular/core';
 export class PotentialInfectionsComponent {
   @Input()
   data: Date[] = [new Date()];
+
+  constructor(private readonly infectionManagementService: InfectionManagementService) {}
+
+  onClick(id: number) {
+    this.infectionManagementService.setInfectionId(id);
+  }
 }

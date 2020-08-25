@@ -1,4 +1,2 @@
-<ng-container *ngIf="infectionData">
-    <p>position: {{infectionData.coordinate | json}}</p>
-    <p>date: {{infectionData.date | date}}</p>
-</ng-container>
+
+<infection-content-view [infectionData]="selectedInfection$ | async"></infection-content-view>
