@@ -16,26 +16,12 @@
   box-shadow: 2px 0 6px rgba(0,21,41,.35);
 }
 
-.header-trigger {
-  height: 64px;
-  padding: 20px 24px;
-  font-size: 20px;
-  cursor: pointer;
-  transition: all .3s,padding 0s;
-}
-
 .trigger:hover {
   color: #1890ff;
 }
 
-.sidebar-logo {
-  position: relative;
+.top-spacer {
   height: 64px;
-  padding-left: 24px;
-  overflow: hidden;
-  line-height: 64px;
-  background: #001529;
-  transition: all .3s;
 }
 
 .sidebar-logo img {
@@ -70,7 +56,7 @@ nz-header {
 }
 
 nz-content {
-  margin: 24px;
+  margin: 1rem;
 }
 
 .inner-content {
