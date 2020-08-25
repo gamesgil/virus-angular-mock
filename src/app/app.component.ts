@@ -1,3 +1,4 @@
+import { InfectionData } from './virus-events/infection-content/infection-data.model';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  isCollapsed = false;
+  dummyData: InfectionData = {coordinate: {lon: 1, lat: 2}, date: new Date()};
 }
