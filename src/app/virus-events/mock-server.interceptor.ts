@@ -27,11 +27,11 @@ export class MockServerInterceptor implements HttpInterceptor {
   getMockInfections(): InfectionData[] {
     const result = [];
 
-    for(let i = 0; i < Math.floor(Math.random() * 10); i++) {
+    for(let i = 0; i < 9000 + Math.floor(Math.random() * 1100); i++) {
       result.push(
         Object.assign(new InfectionData(), {
           coordinate: {lon: Math.random() * 100, lat: Math.random() * 100},
-          date: new Date(new Date().getTime() - Math.floor(Math.random() * 1000000)).toISOString()
+          date: new Date(new Date().getTime() - Math.floor(Math.random() * 10000000)).toISOString()
         })
       );
     }
