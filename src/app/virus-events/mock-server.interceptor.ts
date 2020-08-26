@@ -8,7 +8,7 @@ import {
   HttpResponse
 } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { User } from './shared/user.model';
+import { User } from '../shared/user.model';
 
 @Injectable()
 export class MockServerInterceptor implements HttpInterceptor {
@@ -28,7 +28,7 @@ export class MockServerInterceptor implements HttpInterceptor {
     for(let i = 0; i < 9000 + Math.floor(Math.random() * 1100); i++) {
       result.push(
         Object.assign(new InfectionData(), {
-          coordinate: {lon: Math.random() * 100, lat: Math.random() * 100},
+          coordinate: {lon: 120 - Math.random() * 240, lat: 45 - Math.random() * 90},
           date: new Date(new Date().getTime() - Math.floor(Math.random() * 10000000)).toISOString()
         })
       );

@@ -1,3 +1,5 @@
+<map-view [coordinate]="infectionData?.coordinate"></map-view>
+
 <ng-container *ngIf="infectionData">
     <p>position: {{infectionData.coordinate | json}}</p>
     <p>date: {{infectionData.date | date:'medium'}}</p>

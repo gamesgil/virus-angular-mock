@@ -2,7 +2,7 @@ import { environment } from './../environments/environment';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User } from './virus-events/shared/user.model';
+import { User } from './shared/user.model';
 import { shareReplay, tap } from 'rxjs/operators';
 
 /**
