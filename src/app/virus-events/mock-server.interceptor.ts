@@ -10,6 +10,9 @@ import {
 import { Observable, of } from 'rxjs';
 import { User } from './shared/user.model';
 
+/**
+ * Mock server interceptor.
+ */
 @Injectable()
 export class MockServerInterceptor implements HttpInterceptor {
 
@@ -17,10 +20,8 @@ export class MockServerInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const arrUrl = request.url.split('/');
+    const body = !request.url.includes('infections') ? this.getMockUser(arrUrl[arrUrl.length - 1]) : this.getMockInfections();
 
-    console.log({arrUrl})
-
-    const body = request.url.includes('user') ? this.getMockUser(arrUrl[arrUrl.length - 1]) : this.getMockInfections();
     return of(new HttpResponse({status: 200, body}));
   }
 

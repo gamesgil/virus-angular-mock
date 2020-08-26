@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import {map} from 'rxjs/operators';
+
 /**
  * Infection management service.
  */
@@ -17,8 +18,8 @@ export class InfectionManagementService {
 
   constructor(private readonly http: HttpClient) {}
 
-  loadData() {
-    this.http.get<InfectionData[]>(`${environment.apiUrl}${environment.infectionsEndpoint}`).pipe(
+  loadData(userId: number) {
+    this.http.get<InfectionData[]>(`${environment.apiUrl}${userId}/${environment.infectionsEndpoint}`).pipe(
       map(data => data.sort((item1, item2) => item1.date < item2.date ? 1 : -1)),
     ).subscribe(
       data => this.infections = data

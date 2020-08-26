@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://pandemic.com/api/',
-  userEndpoint: 'user',
+  apiUrl: 'https://pandemic.com/api/user/',
   infectionsEndpoint: 'infections'
 };
 
