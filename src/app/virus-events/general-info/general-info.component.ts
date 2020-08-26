@@ -13,7 +13,7 @@ import { AdminService } from 'src/app/admin.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GeneralInfoComponent {
-  user$ = this.adminService.getUserInfo(789);
+  user$ = this.adminService.getUserInfo();
 
   totalInfections = this.infectionManagementService.infections.length;
 
