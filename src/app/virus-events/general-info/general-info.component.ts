@@ -1,4 +1,6 @@
+import { InfectionManagementService } from './../infection-management.service';
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { AdminService } from 'src/app/admin.service';
 
 /**
  * Infections general info component.
@@ -11,15 +13,10 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GeneralInfoComponent {
-  /**
-   * User name.
-   */
-  @Input()
-  username = 'n/a';
+  user$ = this.adminService.getUserInfo(789);
 
-  /**
-   * Num of potential infections.
-   */
-  @Input()
-  potentialInfections = 0;
+  totalInfections = this.infectionManagementService.infections.length;
+
+  constructor(private readonly adminService: AdminService,
+              private readonly infectionManagementService: InfectionManagementService) {}
 }
