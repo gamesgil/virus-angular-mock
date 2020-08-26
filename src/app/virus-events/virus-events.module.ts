@@ -1,3 +1,4 @@
+import { AdminService } from 'src/app/admin.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -37,7 +38,11 @@ import { GeneralInfoViewComponent } from './general-info-view/general-info-view.
   ]
 })
 export class VirusEventsModule {
-  constructor(private readonly infectionManagementService: InfectionManagementService) {
-    this.infectionManagementService.loadData();
+  constructor(
+    private readonly infectionManagementService: InfectionManagementService,
+    private readonly adminService: AdminService) {
+      this.adminService.getUserInfo().subscribe(
+        user => this.infectionManagementService.loadData(user.id)
+      );
   }
  }
