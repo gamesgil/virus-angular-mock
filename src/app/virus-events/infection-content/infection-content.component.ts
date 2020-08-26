@@ -13,6 +13,6 @@ import { InfectionManagementService } from '../infection-management.service';
 })
 export class InfectionContentComponent {
   selectedInfection$ = this.infectionManagementService.selectedInfection$;
-  
+
   constructor(private readonly infectionManagementService: InfectionManagementService) {}
 }

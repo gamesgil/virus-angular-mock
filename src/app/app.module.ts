@@ -22,6 +22,7 @@ registerLocaleData(en);
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IconsProviderModule,
     NzLayoutModule,
     NzMenuModule,

@@ -1,3 +1,4 @@
+import { InfectionData } from './../infection-content/infection-data.model';
 import { InfectionManagementService } from './../infection-management.service';
 import { Component, Input } from '@angular/core';
 
@@ -8,8 +9,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./potential-infections.component.scss']
 })
 export class PotentialInfectionsComponent {
-  @Input()
-  data: Date[] = [new Date()];
+  data = this.infectionManagementService.infections;
 
   constructor(private readonly infectionManagementService: InfectionManagementService) {}
 

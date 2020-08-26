@@ -2,7 +2,7 @@
     <nz-list-item *ngFor="let item of data; let i = index">
       <a (click)="onClick(i)">
         <span nz-typography><mark>⚠</mark></span>
-      {{ item | date }}
+      {{ item.date | date:'medium' }}
     </a>
     </nz-list-item>
   </nz-list>
