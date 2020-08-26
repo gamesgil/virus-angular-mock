@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { User } from '../shared/user.model';
+import { User } from '../../shared/user.model';
 
 @Component({
   // tslint:disable-next-line: component-selector

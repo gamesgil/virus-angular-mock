@@ -11,7 +11,7 @@ import { InfectionManagementService } from './infection-management.service';
 import { InfectionContentViewComponent } from './infection-content-view/infection-content-view.component';
 import { MockServerInterceptor } from './mock-server.interceptor';
 import { GeneralInfoViewComponent } from './general-info-view/general-info-view.component';
-
+import {MapModule} from '../map/map.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import { GeneralInfoViewComponent } from './general-info-view/general-info-view.
     CommonModule,
     HttpClientModule,
     NzGridModule,
-    NzListModule
+    NzListModule,
+    MapModule
   ],
   exports: [GeneralInfoComponent,
     PotentialInfectionsComponent,
